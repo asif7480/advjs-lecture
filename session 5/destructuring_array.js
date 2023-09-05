@@ -1,5 +1,5 @@
 // simple array
-// let user = ["asif", 22, "karachi"]
+// let user = ["abc", 22, "karachi"]
 // destructuring array
 // let [name, age =21, city] = user
 
@@ -8,7 +8,7 @@
 // console.log(city);
 
 // destructuring multi dimensional array
-// let user = ["asif", 22, "karachi", ["Male", 25000]]
+// let user = ["abc", 22, "karachi", ["Male", 25000]]
 // let [name, age, city, [gender, salary]] = user
 
 // console.log(name);
@@ -18,7 +18,7 @@
 // console.log(salary);
 
 // using rest operator in destructuring
-// let user = ["asif", 22, "karachi"]
+// let user = ["abc", 22, "karachi"]
 // let [name, ...args] = user
 
 // console.log(name);
@@ -38,7 +38,7 @@
 // assigning function in destructure values of array
 
 function user(){
-    return ["Asif", 23, "karachi"]
+    return ["abc", 23, "karachi"]
 }
 
 let [name, age, city] = user()
