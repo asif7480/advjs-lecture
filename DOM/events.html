@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        .font{
+            font-size: 24px;
+        }
+        .color{
+            color: blueviolet;
+        }
+
+        .bold{
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <h3>Event handling</h3>
+    <button onclick="show()">Click me</button>
+    
+    
+    <h3>click on the button to see the date</h3>
+    <button onclick="showDate()">Click to see date</button>
+    <p id="date"></p>
+    
+    <p id="text">This is a simple text</p>
+    <button onclick="applyStyles()">click to increase the font the text</button>
+
+    <h3>toggle style</h3>
+
+    <p id="sample-text">This is an example text in which I'll do toggle operation</p>
+    <button onclick="font()">Increase Font size</button>
+    <button onclick="color()">change color</button>
+    <button onclick="bold()">increaes font weight</button>
+    <button onclick="normal()">default</button>
+    
+    <script>
+        function show(){
+            console.log("clicked.");
+        }
+        // ---------------------------------------
+        function showDate(){
+            let date = new Date()
+            document.getElementById("date").innerHTML = date
+        }
+        // ---------------------------------------
+        function applyStyles(){
+            document.getElementById("text").style.fontSize = "24px"
+            document.getElementById("text").style.textTransform = "uppercase"
+        }
+
+
+        // ----------------------------------------
+        let text = document.getElementById('sample-text')
+
+        function font(){
+            text.classList.toggle("font")
+        }
+        function color(){
+            text.classList.toggle("color")
+        }
+        function bold(){
+            text.classList.toggle("bold")
+        }
+        function normal(){
+            text.classList.remove("font","color","bold")
+            // text.classList.toggle("bold")
+            // text.classList.toggle("bold")
+        }
+    </script>
+</body>
+</html>

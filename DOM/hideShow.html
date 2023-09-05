@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>     
+        <label>Password</label>
+        <input type="password" id="pass" placeholder="Enter your password">     
+         
+        <input type="checkbox" onclick="change()">         
+        <label class="txt">Show Password</label>     
+    </form>
+
+    <script>
+        function change(){
+     var pass = document.getElementById('pass');         
+      if (pass.type == "password") {       
+            pass.type= 'text'; 
+        }else{  
+            pass.type='password';
+       }     
+    }
+
+    </script>
+</body>
+</html>

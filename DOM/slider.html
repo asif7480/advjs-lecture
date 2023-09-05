@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>slide show</title>
+    </head>
+    <style>
+        *{
+    box-sizing:border-box;
+    }
+    #sliderContainer{
+        width:320px;
+        height:220px;
+        padding:10px;
+        margin:auto;
+        position:relative;
+        background-color:#AAAAAA;
+    }
+    #sliderImage{
+        width:300px;
+        height:200px;
+        position:absolute;
+    }
+    .btn{
+        width:60px;
+        height:60px;
+        border:none;
+        outline:none;
+        font-size:25px;
+        position:absolute;
+        left:0;
+        top:70px;
+    }
+    .next{
+        left:258px;
+    }
+    .btn:hover{
+        background-color:#000000;
+        color:#FFFFFF;
+    }
+    
+    </style>
+    <body>
+        
+        <!--slide show container-->
+        <div id="sliderContainer">
+            
+            <img id="sliderImage" src="https://images.pexels.com/photos/19885/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940" >
+            <button class="btn prev" onclick="prevBtn()">&#10094;</button>
+            <button class="btn next" onclick="nextBtn()">&#10095;</button>
+            
+        </div>
+    
+    <script>
+      
+        let images  = [
+        "https://images.pexels.com/photos/672532/pexels-photo-672532.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "https://images.pexels.com/photos/19885/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"    
+    ]
+        var index=1;
+        function nextBtn(){
+            
+            var slider=document.getElementById("sliderImage");
+            index++;
+            
+            if(index>=images.length){
+                index=0;
+            }
+            
+            slider.src=images[index];
+        }
+
+        function prevBtn(){
+            
+            var slider=document.getElementById("sliderImage");
+            index--;
+            
+            if(index<0){
+                index=images.length-1;
+            }
+            
+            slider.src=images[index];
+        }
+    </script>
+    </body>
+</html>

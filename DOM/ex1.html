@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecting dom elements</title>
+</head>
+<body>
+    <p id="id">A simple paragraph with an id</p>
+    <p class="class">A simple paragraph with an id</p>
+    <p>A simple paragraph</p>
+
+    <p id="addingText"></p>
+    <img src="1.jpg" height="400" width="400">
+
+
+    <a href="https://www.facebook.com" id="anchor">visit facebook</a>
+    <script>
+        let idElement = document.getElementById("id")
+        console.log(idElement);
+        let classElement = document.getElementsByClassName("class")
+        console.log(classElement);
+        let tagElement = document.getElementsByTagName("p")
+        console.log(tagElement);
+
+        let text = document.getElementById("addingText");
+        text.innerText = "<h1>Adding a simple heading element</h1>"
+        // text.innerHTML = "<h1>Adding a simple heading element</h1>"
+
+        // applying styles in mulitple elements
+        idElement.style.color = "Blue"
+        classElement[0].style.fontSize = "21px"
+
+        // changing image by selecting attribute
+        imgElement = document.getElementsByTagName("img")
+        imgElement[0].src = "2.jpg"
+
+
+        // change href by selecting id
+        let anchorElement = document.getElementById("anchor")
+        anchorElement.href = "https://www.gmail.com"
+
+    </script>
+</body>
+</html>
