@@ -58,6 +58,9 @@
         "https://images.pexels.com/photos/2190283/pexels-photo-2190283.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"    
     ]
         var index=1;
+
+
+        // functionality for next image
         function nextBtn(){
             
             var slider=document.getElementById("sliderImage");
@@ -70,6 +73,7 @@
             slider.src=images[index];
         }
 
+        // funcationality for previous image
         function prevBtn(){
             
             var slider=document.getElementById("sliderImage");
@@ -81,6 +85,14 @@
             
             slider.src=images[index];
         }
+
+        // functionality for automatic slider
+        function startAutoSlider() {
+             setInterval(nextBtn, 4000);
+        }
+
+        startAutoSlider()
+        // window.addEventListener("load", startAutoSlider);
     </script>
     </body>
 </html>

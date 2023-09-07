@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        body{
+            background-color: #222;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container{
+            height: 400px;
+            width: 400px;
+            border-radius: 15px;
+            background-color: purple;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .counter{
+            font-size: 50px;
+        }
+
+        .follower{
+            font-size: 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <h1 class="counter">1000</h1>
+            <p class="follower">Followers</p>
+    </div>
+
+    <script>
+        let counter = document.querySelector(".counter");
+        let follower = document.querySelector(".follower");
+
+
+        let count = 0;
+
+        setInterval(() => {
+            if(count<500){
+                count++
+                counter.innerText = count
+            }
+        }, 1);
+
+        setTimeout(() => {
+            follower.innerText = "Followers on Github."
+        }, 3000);
+    </script>
+</body>
+</html>
