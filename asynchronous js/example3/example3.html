@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getting data from text file using fetch api</title>
+</head>
+<body>
+    <button id="getDataFromAnApi">Get data from an api</button>
+    <p id="output"></p>
+
+
+    <script>
+        document.getElementById('getDataFromAnApi').addEventListener('click', getData)
+
+      // fetching data from json placeholder
+      function getData(){
+            fetch('https://jsonplaceholder.typicode.com/posts')
+            .then( (response) => response.json())
+
+            .then( (data) => {
+                let output = `<h2> Output From API </h2>`
+                    data.forEach( (post) => {
+                        output += `
+                        <div>
+                            <h2>Id: ${post.id}</h2>
+                            <h3>Title: ${post.title}</h3>
+                            <p>${post.body}</p>
+                        </div>  
+                        `;
+                    })
+                    document.getElementById('output').innerHTML = output;
+            })
+            .catch( (err) => console.log(err))
+
+        }
+    </script>
+</body>
+</html>

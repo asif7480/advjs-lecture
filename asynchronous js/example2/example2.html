@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getting data from text file using fetch api</title>
+</head>
+<body>
+    <button id="getUsers">Get data from a json file</button>
+    <p id="output"></p>
+
+
+    <script>
+        document.getElementById("getUsers").addEventListener('click', showUsersFromJsonFile)
+
+       // get users from json file
+       function showUsersFromJsonFile(){
+            fetch('users.json')
+            .then( (response) => response.json())
+            // .then( (data) => console.log(data))
+            .then( (data) => {
+                let output = `<h2>Users</h2>`
+                data.forEach( (user) => {
+                    output += `
+                    <ul>
+                        <li>Id: ${user.id}</li>
+                        <li>Name: ${user.name}</li>
+                        <li>Email: ${user.email}</li>
+                    </ul>
+                    `;
+
+                    document.getElementById('output').innerHTML = output;
+                })
+            })
+            .catch( (err) => console.log(err))
+        }
+    </script>
+</body>
+</html>

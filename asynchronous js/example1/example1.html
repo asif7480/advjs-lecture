@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getting data from text file using fetch api</title>
+</head>
+<body>
+    <button id="getText">Get Text data from the text file</button>
+    <p id="output"></p>
+
+
+    <script>
+        document.getElementById("getText").addEventListener('click', showText)
+
+        // get text data from a text file.
+       function showText(){
+        fetch("sample.txt")
+        .then( (response) => response.text() )
+        // .then( (data) => console.log(data))
+        .then( (data) => {
+            document.getElementById("output").innerHTML = data
+        })
+        .catch( (error) => console.log(error))
+       }
+    </script>
+</body>
+</html>
