@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="getText">Get data from the text</button>
+    <p id="output"></p>
+
+    <script>
+        document.getElementById("getText").addEventListener("click", getText)
+
+        async function getText(){
+            const dataFromApi = await fetch('sample.txt')
+            // console.log(dataFromApi);
+            const data = await dataFromApi.text()
+            console.log(data); 
+            document.getElementById('output').innerHTML = data
+        }
+    </script>
+</body>
+</html>

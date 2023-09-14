@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getting data from json file</title>
+</head>
+<body>
+    <button id="getData">Click me to see json data</button>
+    <p id="output"></p>
+
+    <script>
+        document.getElementById('getData').addEventListener('click', getData)
+
+        // async function getData(){
+        //     const response = await fetch('users.json')
+        //     const data = await response.json()
+        //     console.log(data);
+        //     let output = `<h2>Users Data</h2>`
+        //     data.forEach( (element) => {
+        //         output += `
+        //             <ul>
+        //                 <li>${element.id}</li>    
+        //                 <li>${element.name}</li>    
+        //                 <li>${element.email}</li>    
+        //             </ul>
+        //         `
+        //     document.getElementById('output').innerHTML = output
+        //     }) 
+        // }
+
+        async function getData(){
+            try{
+            const response = await fetch('users.json')
+            const data = await response.json()
+            console.log(data);
+            let output = `<h3>Users data</h3>`;
+            data.forEach( (element) => {
+                output += `
+                    <ul>
+                        <li>${element.id}</li>
+                        <li>${element.name}</li>
+                        <li>${element.email}</li>
+                    </ul>    
+                `
+            })
+            document.getElementById("output").innerHTML = output
+            }catch(err){
+                console.log(`${err}`);
+        }
+
+        }
+    </script>
+</body>
+</html>
